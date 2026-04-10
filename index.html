@@ -250,7 +250,7 @@
     .job::before {
       content: "";
       position: absolute;
-      left: -1.15rem;
+      left: calc(-1.1rem - 5px);
       top: 0.6rem;
       width: 12px;
       height: 12px;
@@ -403,6 +403,8 @@
       color: var(--text);
     }
     .lang-tag {
+      display: inline-flex;
+      align-items: center;
       font-size: 0.7rem;
       padding: 0.15rem 0.5rem;
       background: var(--bg);
