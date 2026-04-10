@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harry F. Foster — Tech Enablement Specialist</title>
+  <meta name="description" content="Personal site of Harry F. Foster — Tech Enablement Specialist at IAG. Business analysis, Agile delivery, GenAI enablement, and more." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0e1116;
+      --bg-elev: #161b22;
+      --bg-card: #1c2128;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-dim: #9da7b3;
+      --accent: #58a6ff;
+      --accent-2: #7ee787;
+      --shadow: 0 6px 24px rgba(0,0,0,0.3);
+      --radius: 14px;
+      --max: 960px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fa;
+        --bg-elev: #ffffff;
+        --bg-card: #ffffff;
+        --border: #d0d7de;
+        --text: #1f2328;
+        --text-dim: #59636e;
+        --accent: #0969da;
+        --accent-2: #1a7f37;
+        --shadow: 0 6px 24px rgba(140,149,159,0.2);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+    a:hover { opacity: 0.8; text-decoration: underline; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* HEADER / HERO */
+    header.hero {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--bg-elev) 0%, var(--bg) 100%);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0e1116;
+      flex-shrink: 0;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-text h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2.25rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-text .role {
+      margin: 0 0 0.75rem;
+      color: var(--text-dim);
+      font-size: 1.1rem;
+    }
+    .hero-text .role strong { color: var(--text); }
+
+    .hero-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+      color: var(--text);
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      text-decoration: none;
+      opacity: 1;
+    }
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 3rem 0 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 0 0 1.25rem;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2::before {
+      content: "";
+      width: 4px;
+      height: 1.25rem;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    p { margin: 0 0 1rem; color: var(--text); }
+    .lead { font-size: 1.05rem; color: var(--text-dim); }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.4rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .job {
+      position: relative;
+      padding: 0 0 1.5rem 1rem;
+    }
+    .job::before {
+      content: "";
+      position: absolute;
+      left: -1.15rem;
+      top: 0.6rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+
+    .job .when {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .job h3 {
+      margin: 0.15rem 0 0.4rem;
+      font-size: 1.1rem;
+    }
+    .job p { margin: 0; color: var(--text-dim); }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .skill-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .skill-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+    .skill-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .skill-card li {
+      font-size: 0.85rem;
+      padding: 0.2rem 0.6rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-dim);
+    }
+
+    /* EDUCATION CARDS */
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .edu-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+    .edu-card p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    /* INTERESTS */
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .interest-pill {
+      padding: 0.4rem 0.9rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 3rem;
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .hero-text h1 { font-size: 1.75rem; }
+      .avatar { width: 90px; height: 90px; font-size: 2.25rem; }
+      header.hero { padding: 2.5rem 0 2rem; }
+      section { padding: 2rem 0 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="avatar" aria-hidden="true">HF</div>
+      <div class="hero-text">
+        <h1>Harry F. Foster</h1>
+        <p class="role"><strong>Tech Enablement Specialist</strong> at IAG &middot; Brisbane, Australia</p>
+        <p class="lead" style="margin:0;">Insurance industry professional translating complex technical concepts into engaging stories that drive delivery.</p>
+        <div class="hero-links">
+          <a class="btn primary" href="https://github.com/hfoster1" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="mailto:homehfoster@gmail.com">Email</a>
+          <a class="btn" href="#experience">Experience</a>
+          <a class="btn" href="#skills">Skills</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="about">
+      <h2>About</h2>
+      <p>An insurance industry professional with a passion for telling engaging stories around technically detailed business concepts. My key career objective is to expand my technical and non-technical skills as a Tech Enablement Specialist in the Tech Production Services team at IAG, while supporting executive management through delivering key projects such as the <strong>Intelligent Operations 10X</strong> transformation.</p>
+      <p>With over 4 years of experience at IAG &mdash; both as a graduate and as a business analyst &mdash; I offer an informed perspective on emerging concepts such as the future of AI/ML Ops, and how they should be delivered. I currently use this knowledge to accelerate delivery of the 10X project and support other T&amp;O operational projects.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+
+        <div class="job">
+          <div class="when">2025 — Present</div>
+          <h3>Tech Enablement Specialist &middot; IAG</h3>
+          <p>Lead enablement on the Intelligent Operations 10X transformation, preparing and delivering material for executive touchpoints and informing technical and project-level decision making. Project manage key initiatives across Tech Production Services including GitHub Cloud migration, retention &amp; disposition plans, CMDB Cloud Discovery, Splunk optimisation, and Operational Readiness automation. Drive adoption of GenAI through use case cataloguing and Inclusive Innovation.</p>
+        </div>
+
+        <div class="job">
+          <div class="when">2023 — 2025</div>
+          <h3>Business Analyst &middot; IAG</h3>
+          <p>BA in the Product Ownership team. Drove a 20% uplift in well-managed assessment completion across Product Owners, facilitated training for multiple teams (including IDAM), and onboarded 10+ products with hyper-care for each team.</p>
+        </div>
+
+        <div class="job">
+          <div class="when">2022 — 2023</div>
+          <h3>Graduate &middot; IAG</h3>
+          <p>Rotations across Tech Strategy, Product Ownership, and the ServiceNow Platform. Built skills across stakeholder communications, UX design, business analysis, strategy, content delivery, and well-managed &amp; Agile practices. Earned SAFe Agilist 5.1 and Google Data Analytics certifications.</p>
+        </div>
+
+        <div class="job">
+          <div class="when">2021 — 2022</div>
+          <h3>Claims Processing &amp; Lodgement &middot; IAG</h3>
+          <p>Claims management, customer interaction, collaboration, and problem solving across high-volume claims workflows.</p>
+        </div>
+
+        <div class="job">
+          <div class="when">2020 — 2021</div>
+          <h3>Workforce Contractor &middot; Australian Taxation Office</h3>
+          <p>Customer service and onboarding/training of new starters, with a special interest in small business taxation.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Delivery &amp; Strategy</h3>
+          <ul>
+            <li>Business Analysis</li>
+            <li>SAFe Agilist 5.1</li>
+            <li>Agile / Scrum</li>
+            <li>Product Ownership</li>
+            <li>Stakeholder Management</li>
+            <li>Project Coordination</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Platforms &amp; Tools</h3>
+          <ul>
+            <li>ServiceNow</li>
+            <li>Now Assist</li>
+            <li>GitHub</li>
+            <li>Splunk</li>
+            <li>CMDB</li>
+            <li>Jira</li>
+            <li>Confluence</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Cloud &amp; Data</h3>
+          <ul>
+            <li>AWS Cloud Foundations</li>
+            <li>Google Cloud Foundations</li>
+            <li>Google Data Analytics</li>
+            <li>SQL</li>
+            <li>Cloud Discovery</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>AI &amp; Emerging Tech</h3>
+          <ul>
+            <li>GenAI Enablement</li>
+            <li>LLM Use Cases</li>
+            <li>AI / ML Ops</li>
+            <li>Agentic AI (interest)</li>
+            <li>Inclusive Innovation</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Programming &amp; Analysis</h3>
+          <ul>
+            <li>Python</li>
+            <li>R</li>
+            <li>MATLAB</li>
+            <li>Stata</li>
+            <li>Financial Volatility Models</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Communication</h3>
+          <ul>
+            <li>Executive Comms</li>
+            <li>Technical Storytelling</li>
+            <li>Training &amp; Facilitation</li>
+            <li>UX Design</li>
+            <li>Excel / Word / PowerPoint</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu-card">
+        <h3>Bachelor of Business &middot; Queensland University of Technology</h3>
+        <p>Finance Major, Mathematics Minor &middot; Dean&rsquo;s Honours Program &middot; GPA 6.0 &middot; Dean&rsquo;s List</p>
+      </div>
+      <div class="edu-card">
+        <h3>St James Lutheran College</h3>
+        <p>HSC, 2009&ndash;2016 &middot; Valedictorian (2016)</p>
+      </div>
+    </section>
+
+    <section id="interests">
+      <h2>Personal Interests</h2>
+      <div class="interests">
+        <span class="interest-pill">Marathon running</span>
+        <span class="interest-pill">Literature</span>
+        <span class="interest-pill">Food science</span>
+        <span class="interest-pill">Emerging technologies</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Harry F. Foster &middot; <a href="https://github.com/hfoster1" target="_blank" rel="noopener">github.com/hfoster1</a></p>
+      <p style="margin-top:0.25rem;font-size:0.8rem;">References available upon request.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
