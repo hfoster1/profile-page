@@ -55,13 +55,11 @@
     }
     a:hover { opacity: 0.85; text-decoration: underline; }
 
-    /* LAYOUT — two-column on desktop */
+    /* LAYOUT — two-column on desktop, full bleed (no max-width on wrapper) */
     .layout {
       display: grid;
-      grid-template-columns: minmax(320px, 38%) 1fr;
+      grid-template-columns: minmax(320px, 400px) 1fr;
       min-height: 100vh;
-      max-width: 1400px;
-      margin: 0 auto;
     }
 
     /* LEFT SIDEBAR */
@@ -203,6 +201,7 @@
     main.content {
       padding: 3.5rem 3rem 4rem;
       min-width: 0;
+      max-width: 1100px;
     }
 
     section {
@@ -272,6 +271,52 @@
       font-size: 1.05rem;
     }
     .job p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    /* NOW GRID */
+    .now-grid {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .now-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      transition: transform 0.15s, border-left-color 0.15s;
+    }
+    .now-card:nth-child(2) { border-left-color: var(--accent-2); }
+    .now-card:nth-child(3) { border-left-color: var(--accent-3); }
+    .now-card:nth-child(4) { border-left-color: var(--accent); }
+    .now-card:nth-child(5) { border-left-color: var(--accent-2); }
+    .now-card:nth-child(6) { border-left-color: var(--accent-3); }
+    .now-card:hover { transform: translateY(-2px); }
+    .now-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.25rem;
+    }
+    .now-value {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .now-value a { color: var(--accent); }
+    .now-meta {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 0.2rem;
+    }
+    .now-updated {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
 
     /* SKILLS GRID */
     .skills-grid {
@@ -483,6 +528,7 @@
 
           <nav class="nav-links">
             <a href="#about">About</a>
+            <a href="#now">Now</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
@@ -504,6 +550,51 @@
         <p class="lead">An insurance industry professional with a passion for telling engaging stories around technically detailed business concepts.</p>
         <p>My key career objective is to expand my technical and non-technical skills as a Tech Enablement Specialist in the Tech Production Services team at IAG, while supporting executive management through delivering key projects such as the <strong>Intelligent Operations 10X</strong> transformation.</p>
         <p>With over 4 years of experience at IAG &mdash; both as a graduate and as a business analyst &mdash; I offer an informed perspective on emerging concepts such as the future of AI/ML Ops, and how they should be delivered. I currently use this knowledge to accelerate delivery of the 10X project and support other T&amp;O operational projects.</p>
+      </section>
+
+      <section id="now">
+        <h2>Now</h2>
+        <p class="lead">A snapshot of what I&rsquo;m focused on at the moment &mdash; inspired by Derek Sivers&rsquo; <a href="https://nownownow.com/about" target="_blank" rel="noopener">/now page</a> idea.</p>
+        <div class="now-grid">
+
+          <div class="now-card">
+            <div class="now-label">Working on</div>
+            <div class="now-value">IAG Intelligent Operations 10X transformation</div>
+            <div class="now-meta">Tech enablement &amp; executive material</div>
+          </div>
+
+          <div class="now-card">
+            <div class="now-label">Studying</div>
+            <div class="now-value">AWS Solutions Architect Associate (SAA-C03)</div>
+            <div class="now-meta">Built my own <a href="https://hfoster1.github.io/aws-study-app/" target="_blank" rel="noopener">study app</a> to track it</div>
+          </div>
+
+          <div class="now-card">
+            <div class="now-label">Learning</div>
+            <div class="now-value">Conversational French (A1 &rarr; A2)</div>
+            <div class="now-meta">Practising via my own <a href="https://hfoster1.github.io/french-study/" target="_blank" rel="noopener">French Study app</a></div>
+          </div>
+
+          <div class="now-card">
+            <div class="now-label">Training for</div>
+            <div class="now-value">Marathon running</div>
+            <div class="now-meta">Long Sundays &amp; mid-week tempos</div>
+          </div>
+
+          <div class="now-card">
+            <div class="now-label">Exploring</div>
+            <div class="now-value">GenAI use cases &amp; agentic AI</div>
+            <div class="now-meta">Cataloguing patterns for IAG Tech Production Services</div>
+          </div>
+
+          <div class="now-card">
+            <div class="now-label">Latest ship</div>
+            <div class="now-value">CCP Drill &mdash; AWS practice tool</div>
+            <div class="now-meta">412 adaptive questions, <a href="https://hfoster1.github.io/aws-test-prep/" target="_blank" rel="noopener">live</a></div>
+          </div>
+
+        </div>
+        <p class="now-updated">Last updated April 2026</p>
       </section>
 
       <section id="experience">
@@ -592,6 +683,7 @@
             </div>
             <p>A personalised A1&ndash;A2 conversational French webapp. Six lessons covering greetings, numbers, café ordering, navigation, daily routines, and shopping. Each lesson includes vocabulary with pronunciation, sample dialogues, grammar tips, and multiple-choice quizzes with progress tracking. No build step.</p>
             <div class="project-links">
+              <a class="live" href="https://hfoster1.github.io/french-study/" target="_blank" rel="noopener">Live demo</a>
               <a href="https://github.com/hfoster1/french-study" target="_blank" rel="noopener">Source</a>
             </div>
           </div>
@@ -603,19 +695,8 @@
             </div>
             <p>Estimates blood alcohol concentration based on drink consumption and individual user variables (weight, sex, time elapsed). A small browser-based calculator built for personal use.</p>
             <div class="project-links">
+              <a class="live" href="https://hfoster1.github.io/bac-estimator/" target="_blank" rel="noopener">Live demo</a>
               <a href="https://github.com/hfoster1/bac-estimator" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3>profile-page</h3>
-              <span class="lang-tag"><span class="lang-dot" style="background:#e34c26"></span>HTML</span>
-            </div>
-            <p>This site &mdash; a single-file static profile page hosted via GitHub Pages on a custom domain. No build step, no dependencies, dark/light mode via <code>prefers-color-scheme</code>, and an animated canvas backdrop in the sidebar.</p>
-            <div class="project-links">
-              <a class="live" href="https://hfoster.co/" target="_blank" rel="noopener">Live</a>
-              <a href="https://github.com/hfoster1/profile-page" target="_blank" rel="noopener">Source</a>
             </div>
           </div>
 
