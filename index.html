@@ -6,33 +6,36 @@
   <title>Harry Foster — Tech Enablement Specialist</title>
   <meta name="description" content="Personal site of Harry Foster — Tech Enablement Specialist at IAG. Business analysis, Agile delivery, GenAI enablement, and side projects." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0e1116;
-      --bg-elev: #161b22;
-      --bg-card: #1c2128;
-      --border: #30363d;
-      --text: #e6edf3;
-      --text-dim: #9da7b3;
-      --accent: #58a6ff;
-      --accent-2: #7ee787;
-      --accent-3: #d2a8ff;
-      --shadow: 0 6px 24px rgba(0,0,0,0.35);
+      --bg: #141210;
+      --bg-elev: #1d1a16;
+      --bg-card: #242019;
+      --border: #35302a;
+      --text: #ede8e1;
+      --text-dim: #9a8f82;
+      --accent: #e07848;
+      --accent-2: #5fad8e;
+      --accent-3: #c8a45a;
+      --shadow: 0 6px 24px rgba(0,0,0,0.45);
       --radius: 14px;
     }
 
     @media (prefers-color-scheme: light) {
       :root {
-        --bg: #f6f8fa;
+        --bg: #faf8f5;
         --bg-elev: #ffffff;
         --bg-card: #ffffff;
-        --border: #d0d7de;
-        --text: #1f2328;
-        --text-dim: #59636e;
-        --accent: #0969da;
-        --accent-2: #1a7f37;
-        --accent-3: #8250df;
-        --shadow: 0 6px 24px rgba(140,149,159,0.2);
+        --border: #e0dbd4;
+        --text: #1a1612;
+        --text-dim: #695f55;
+        --accent: #c4622a;
+        --accent-2: #2e7d62;
+        --accent-3: #9a7030;
+        --shadow: 0 6px 24px rgba(100,80,60,0.15);
       }
     }
 
@@ -41,7 +44,7 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -109,9 +112,10 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       display: grid;
       place-items: center;
+      font-family: 'Fraunces', Georgia, serif;
       font-size: 2.75rem;
-      font-weight: 700;
-      color: #0e1116;
+      font-weight: 900;
+      color: var(--bg);
       box-shadow: var(--shadow);
       margin-bottom: 1.5rem;
       animation: float 6s ease-in-out infinite;
@@ -123,9 +127,11 @@
     }
 
     .sidebar h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 900;
       font-size: 2rem;
       margin: 0 0 0.4rem;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       line-height: 1.15;
     }
     .sidebar .role {
@@ -185,7 +191,8 @@
       padding-left: 0.75rem;
       transition: color 0.15s, border-color 0.15s;
     }
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--accent);
       border-left-color: var(--accent);
       text-decoration: none;
@@ -210,6 +217,8 @@
     }
 
     h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
       font-size: 1.5rem;
       margin: 0 0 1.25rem;
       letter-spacing: -0.01em;
@@ -446,6 +455,58 @@
       border-color: var(--accent);
     }
 
+    /* FEATURED PROJECTS */
+    .projects-featured {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card--featured::before {
+      opacity: 1;
+    }
+
+    .project-card--featured h3 {
+      font-size: 1.1rem;
+    }
+
+    .project-badge {
+      margin-left: auto;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      flex-shrink: 0;
+    }
+
+    .projects-more-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin: 0.5rem 0 0.85rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .projects-grid--small .project-card {
+      padding: 1rem;
+    }
+
+    .projects-grid--small .project-card h3 {
+      font-size: 0.95rem;
+    }
+
+    .projects-grid--small .project-card p {
+      font-size: 0.875rem;
+    }
+
     /* EDUCATION CARDS */
     .edu-card {
       background: var(--bg-card);
@@ -639,12 +700,13 @@
         <h2>Projects</h2>
         <p class="lead">Side projects on <a href="https://github.com/hfoster1" target="_blank" rel="noopener">GitHub</a> &mdash; mostly self-hosted study tools and small webapps.</p>
 
-        <div class="projects-grid">
+        <div class="projects-featured">
 
-          <div class="project-card">
+          <div class="project-card project-card--featured">
             <div class="project-header">
               <h3>CCP Drill</h3>
               <span class="lang-tag"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+              <span class="project-badge">Featured</span>
             </div>
             <p>Adaptive practice tool for the AWS Certified Cloud Practitioner (CLF-C02) exam. 412 exam-quality questions across all four domains, an adaptive engine that focuses practice time on weak areas, instant explanations, and a per-domain results breakdown. Zero backend &mdash; runs entirely in the browser.</p>
             <div class="project-links">
@@ -652,6 +714,38 @@
               <a href="https://github.com/hfoster1/aws-test-prep" target="_blank" rel="noopener">Source</a>
             </div>
           </div>
+
+          <div class="project-card project-card--featured">
+            <div class="project-header">
+              <h3>GenAI Readiness Tool</h3>
+              <span class="lang-tag"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+              <span class="project-badge">Featured</span>
+            </div>
+            <p>A 12-question organisational readiness assessment across four dimensions: People &amp; Culture, Process &amp; Data, Technology &amp; Tools, and Governance &amp; Risk. Scores 0–60 and maps to an adoption tier with a radar chart and prioritised action plan.</p>
+            <div class="project-links">
+              <a class="live" href="https://hfoster1.github.io/genai-readiness-tool/" target="_blank" rel="noopener">Live demo</a>
+              <a href="https://github.com/hfoster1/genai-readiness-tool" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+
+          <div class="project-card project-card--featured">
+            <div class="project-header">
+              <h3>Marathon Training Dashboard</h3>
+              <span class="lang-tag"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+              <span class="project-badge">Featured</span>
+            </div>
+            <p>Upload a CSV training log and get instant analytics: weekly mileage bar chart, cumulative distance line chart, summary stats, and race time predictions for any distance using the Riegel formula. No backend — runs entirely in the browser.</p>
+            <div class="project-links">
+              <a class="live" href="https://hfoster1.github.io/marathon-dashboard/" target="_blank" rel="noopener">Live demo</a>
+              <a href="https://github.com/hfoster1/marathon-dashboard" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="projects-more-label">More projects</p>
+
+        <div class="projects-grid projects-grid--small">
 
           <div class="project-card">
             <div class="project-header">
@@ -667,13 +761,13 @@
 
           <div class="project-card">
             <div class="project-header">
-              <h3>IDP Test</h3>
+              <h3>Flavour Pairing Explorer</h3>
               <span class="lang-tag"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
             </div>
-            <p>An Internal Developer Portal UI for scaffolding AWS CDK deployments from the cdk-patterns/serverless library. Fill in your GitHub and AWS details, pick a deployment pattern, and download a ready-to-run bash script that deploys the stack and pushes the result to your repo.</p>
+            <p>Interactive food pairing tool based on volatile compound overlap. Pick an ingredient and discover which foods share its aromatic compounds — the molecular science behind why strawberries and black pepper work together. 25 ingredients across 8 categories.</p>
             <div class="project-links">
-              <a class="live" href="https://hfoster1.github.io/idp-test/" target="_blank" rel="noopener">Live demo</a>
-              <a href="https://github.com/hfoster1/idp-test" target="_blank" rel="noopener">Source</a>
+              <a class="live" href="https://hfoster1.github.io/flavour-pairing-explorer/" target="_blank" rel="noopener">Live demo</a>
+              <a href="https://github.com/hfoster1/flavour-pairing-explorer" target="_blank" rel="noopener">Source</a>
             </div>
           </div>
 
@@ -682,10 +776,22 @@
               <h3>French Study</h3>
               <span class="lang-tag"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
             </div>
-            <p>A personalised A1&ndash;A2 conversational French webapp. Six lessons covering greetings, numbers, café ordering, navigation, daily routines, and shopping. Each lesson includes vocabulary with pronunciation, sample dialogues, grammar tips, and multiple-choice quizzes with progress tracking. No build step.</p>
+            <p>A personalised A1&ndash;A2 conversational French webapp. Six lessons covering greetings, numbers, café ordering, navigation, daily routines, and shopping. Each lesson includes vocabulary, sample dialogues, grammar tips, and multiple-choice quizzes. No build step.</p>
             <div class="project-links">
               <a class="live" href="https://hfoster1.github.io/french-study/" target="_blank" rel="noopener">Live demo</a>
               <a href="https://github.com/hfoster1/french-study" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>IDP Test</h3>
+              <span class="lang-tag"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+            </div>
+            <p>An Internal Developer Portal UI for scaffolding AWS CDK deployments from the cdk-patterns/serverless library. Pick a deployment pattern and download a ready-to-run bash script.</p>
+            <div class="project-links">
+              <a class="live" href="https://hfoster1.github.io/idp-test/" target="_blank" rel="noopener">Live demo</a>
+              <a href="https://github.com/hfoster1/idp-test" target="_blank" rel="noopener">Source</a>
             </div>
           </div>
 
@@ -698,42 +804,6 @@
             <div class="project-links">
               <a class="live" href="https://hfoster1.github.io/bac-estimator/" target="_blank" rel="noopener">Live demo</a>
               <a href="https://github.com/hfoster1/bac-estimator" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Marathon Training Dashboard</h3>
-              <span class="lang-tag"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
-            </div>
-            <p>Upload a CSV training log and get instant analytics: weekly mileage bar chart, cumulative distance line chart, summary stats, and race time predictions for any distance using the Riegel formula. No backend — runs entirely in the browser.</p>
-            <div class="project-links">
-              <a class="live" href="https://hfoster1.github.io/marathon-dashboard/" target="_blank" rel="noopener">Live demo</a>
-              <a href="https://github.com/hfoster1/marathon-dashboard" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3>GenAI Readiness Tool</h3>
-              <span class="lang-tag"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
-            </div>
-            <p>A 12-question organisational readiness assessment across four dimensions: People &amp; Culture, Process &amp; Data, Technology &amp; Tools, and Governance &amp; Risk. Scores 0–60 and maps to an adoption tier with a radar chart and prioritised action plan.</p>
-            <div class="project-links">
-              <a class="live" href="https://hfoster1.github.io/genai-readiness-tool/" target="_blank" rel="noopener">Live demo</a>
-              <a href="https://github.com/hfoster1/genai-readiness-tool" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Flavour Pairing Explorer</h3>
-              <span class="lang-tag"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
-            </div>
-            <p>Interactive food pairing tool based on volatile compound overlap. Pick an ingredient and discover which foods share its aromatic compounds — the molecular science behind why strawberries and black pepper work together. 25 ingredients across 8 categories.</p>
-            <div class="project-links">
-              <a class="live" href="https://hfoster1.github.io/flavour-pairing-explorer/" target="_blank" rel="noopener">Live demo</a>
-              <a href="https://github.com/hfoster1/flavour-pairing-explorer" target="_blank" rel="noopener">Source</a>
             </div>
           </div>
 
@@ -845,6 +915,7 @@
           <span class="interest-pill">Pizza making</span>
           <span class="interest-pill">Trivia</span>
         </div>
+
       </section>
 
     </main>
@@ -993,6 +1064,28 @@
 
       resize();
       step();
+    })();
+
+    // ===== Scroll-spy: highlight active nav link =====
+    (function () {
+      const sections = document.querySelectorAll('main section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      if (!sections.length || !navLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+            if (active) active.classList.add('active');
+          }
+        });
+      }, {
+        rootMargin: '-15% 0px -70% 0px',
+        threshold: 0,
+      });
+
+      sections.forEach(s => observer.observe(s));
     })();
   </script>
 </body>
