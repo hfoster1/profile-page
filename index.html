@@ -538,23 +538,27 @@
       aside.sidebar {
         position: static;
         height: auto;
-        min-height: 60vh;
-        padding: 2.5rem 1.5rem;
+        padding: 1.75rem 1.5rem 1.5rem;
         border-right: none;
         border-bottom: 1px solid var(--border);
       }
       main.content {
-        padding: 2.5rem 1.5rem 3rem;
+        padding: 2rem 1.5rem 3rem;
       }
       .sidebar-top {
+        flex: 0 0 auto;
         justify-content: flex-start;
       }
+      .avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .sidebar h1 { font-size: 1.7rem; margin-bottom: 0.25rem; }
+      .sidebar .role { margin-bottom: 0.25rem; }
+      .sidebar .location { margin-bottom: 1rem; }
       .nav-links { display: none; }
-    }
-
-    @media (max-width: 500px) {
-      .sidebar h1 { font-size: 1.6rem; }
-      .avatar { width: 90px; height: 90px; font-size: 2.25rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -890,6 +894,10 @@
         <div class="edu-card">
           <h3>Bachelor of Business &middot; Queensland University of Technology</h3>
           <p>Finance Major, Mathematics Minor &middot; Dean&rsquo;s Honours Program &middot; GPA 6.0 &middot; Dean&rsquo;s List</p>
+        </div>
+        <div class="edu-card">
+          <h3>AWS Certified Cloud Practitioner &middot; Amazon Web Services</h3>
+          <p>Foundational AWS cloud concepts, services, security, architecture, pricing, and support (CLF-C02)</p>
         </div>
         <div class="edu-card">
           <h3>SAFe Agilist 5.1 &middot; Scaled Agile</h3>
